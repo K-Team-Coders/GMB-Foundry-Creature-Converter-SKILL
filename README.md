@@ -51,17 +51,43 @@
 
 ## ✦ Как это работает
 
-```text
-  ┌──────────────┐     ┌──────────────┐     ┌────────────────┐     ┌──────────────┐
-  │  статблок    │     │    spec      │     │  Foundry JSON  │     │   Foundry    │
-  │  скриншот    │ ──▶ │  ~30 строк   │ ──▶ │  ~20–100 КБ    │ ──▶ │  Import Data │
-  │  умение      │ LLM │  то, что     │ py  │  ID, activities│     │  🎲 броски   │
-  │  идея        │     │  в тексте    │     │  proficiency   │     │  работают    │
-  └──────────────┘     └──────────────┘     └────────────────┘     └──────────────┘
-                                                    │
-                                                    ▼
-                                          validate_foundry.py
-                                     ✓ структура  ✓ сверка чисел
+```mermaid
+---
+config:
+  look: handDrawn
+  theme: base
+  themeVariables:
+    fontFamily: "Georgia, 'Palatino Linotype', serif"
+    fontSize: 15px
+    lineColor: "#b08d57"
+    edgeLabelBackground: "#fdf3dc"
+---
+flowchart LR
+    src(["📜 <b>Свиток</b><br/>статблок · скриншот<br/>умение · идея"])
+    spec(["🧙 <b>spec</b><br/>~30 строк<br/>то, что в тексте"])
+    json(["⚗️ <b>Foundry JSON</b><br/>~20–100 КБ<br/>ID · activities · proficiency"])
+    fvtt(["🏰 <b>Foundry VTT</b><br/>Import Data<br/>🎲 броски работают"])
+    val{{"🔮 <b>validate_foundry.py</b><br/>структура · сверка чисел"}}
+
+    src == "✨ LLM читает" ==> spec
+    spec == "⚒️ build_foundry.py" ==> json
+    json == "🐉 оживает" ==> fvtt
+    json -.-> val
+    val -. "📖 сводка для сверки<br/>с оригиналом" .-> src
+
+    classDef scroll fill:#fdf3dc,stroke:#8b5a2b,stroke-width:3px,color:#3b2412
+    classDef wizard fill:#e8dcff,stroke:#6a3fb5,stroke-width:3px,color:#2a1250
+    classDef potion fill:#dff5e3,stroke:#2f7d4f,stroke-width:3px,color:#123d22
+    classDef castle fill:#ffe1cc,stroke:#c2410c,stroke-width:3px,color:#4a1a04
+    classDef rune fill:#dbeafe,stroke:#1e40af,stroke-width:2px,stroke-dasharray:6 4,color:#0b1f4d
+
+    class src scroll
+    class spec wizard
+    class json potion
+    class fvtt castle
+    class val rune
+    linkStyle 0,1,2 stroke:#b08d57,stroke-width:3px
+    linkStyle 3,4 stroke:#6a7fd1,stroke-width:2px
 ```
 
 Модель делает то, что умеет лучше всего — **понимает текст**. Скрипт делает то, в чём

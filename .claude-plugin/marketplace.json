@@ -1,0 +1,18 @@
+{
+  "name": "geek-metaverse-bots",
+  "owner": {
+    "name": "Geek Metaverse Bots",
+    "url": "https://geek-metaverse-bots.ru/"
+  },
+  "metadata": {
+    "description": "Полезности Geek Metaverse Bots для игроков и мастеров"
+  },
+  "plugins": [
+    {
+      "name": "gmb-foundry-creature-converter",
+      "source": "./",
+      "description": "Статблоки, умения, заклинания и предметы D&D 5e → JSON для Foundry VTT",
+      "version": "1.0.0"
+    }
+  ]
+}

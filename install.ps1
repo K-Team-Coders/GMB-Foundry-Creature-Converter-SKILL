@@ -1,8 +1,8 @@
 # GMB Foundry Creature Converter installer for Claude Code and Codex (Windows PowerShell)
-#   irm https://raw.githubusercontent.com/GITHUB_USER/GMB-Foundry-Creature-Converter/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL/master/install.ps1 | iex
 $ErrorActionPreference = "Stop"
 try { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 } catch {}
-$Repo = "GITHUB_USER/GMB-Foundry-Creature-Converter"
+$Repo = "K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL"
 $Name = "gmb-foundry-creature-converter"
 $Url  = "https://github.com/$Repo/releases/latest/download/$Name.zip"
 $Tmp  = Join-Path $env:TEMP ("ff-" + [guid]::NewGuid())

@@ -76,7 +76,7 @@
 ### ⚡ Любой агент одной командой (Claude Code, Codex, Cursor, Gemini CLI…)
 
 ```bash
-npx skills add GITHUB_USER/GMB-Foundry-Creature-Converter
+npx skills add K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL
 ```
 Нужен только Node.js. Установщик сам найдёт агентов на компьютере и положит скилл куда нужно.
 
@@ -94,7 +94,7 @@ npx skills add GITHUB_USER/GMB-Foundry-Creature-Converter
 
 Внутри Claude Code:
 ```text
-/plugin marketplace add GITHUB_USER/GMB-Foundry-Creature-Converter
+/plugin marketplace add K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL
 /plugin install gmb-foundry-creature-converter@geek-metaverse-bots
 ```
 Обновление: `/plugin marketplace update geek-metaverse-bots`.
@@ -102,7 +102,7 @@ npx skills add GITHUB_USER/GMB-Foundry-Creature-Converter
 ### 🐧 macOS / Linux — скрипт
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/GITHUB_USER/GMB-Foundry-Creature-Converter/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL/master/install.sh | sh
 ```
 Ставит в Claude Code и в Codex сразу. Только в один: `... | TARGET=claude sh` или `TARGET=codex`.
 Повторный запуск обновляет до последней версии.
@@ -110,14 +110,14 @@ curl -fsSL https://raw.githubusercontent.com/GITHUB_USER/GMB-Foundry-Creature-Co
 ### 🪟 Windows — PowerShell
 
 ```powershell
-irm https://raw.githubusercontent.com/GITHUB_USER/GMB-Foundry-Creature-Converter/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL/master/install.ps1 | iex
 ```
 
 ### <img src="https://cdn.simpleicons.org/anthropic/d97757" height="16"> Claude в браузере и Claude Desktop
 
 Тут команд нет, но всё равно в два клика:
 
-1. **[⬇ Скачать последнюю версию](https://github.com/GITHUB_USER/GMB-Foundry-Creature-Converter/releases/latest/download/gmb-foundry-creature-converter.zip)** (ссылка всегда ведёт на свежий релиз).
+1. **[⬇ Скачать последнюю версию](https://github.com/K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL/releases/latest/download/gmb-foundry-creature-converter.zip)** (ссылка всегда ведёт на свежий релиз).
 2. В Claude откройте раздел **Skills** (Customize → Skills или Settings → Capabilities → Skills) → **Upload skill** → выберите файл.
 
 Нужен платный тариф и включённое выполнение кода.
@@ -169,7 +169,7 @@ Python 3.8+, никаких зависимостей.
 ## ✦ Структура
 
 ```text
-GMB-Foundry-Creature-Converter/
+GMB-Foundry-Creature-Converter-SKILL/
 ├── skills/
 │   └── gmb-foundry-creature-converter/ ← сам скилл
 │       ├── SKILL.md                 ← инструкция для модели

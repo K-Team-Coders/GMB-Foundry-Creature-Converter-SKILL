@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 # GMB Foundry Creature Converter installer for Claude Code and Codex (macOS / Linux / WSL)
-#   curl -fsSL https://raw.githubusercontent.com/GITHUB_USER/GMB-Foundry-Creature-Converter/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL/master/install.sh | sh
 # Options (env): TARGET=claude|codex|all (default: all)   VERSION=latest|v1.0.0
 set -eu
-REPO="GITHUB_USER/GMB-Foundry-Creature-Converter"
+REPO="K-Team-Coders/GMB-Foundry-Creature-Converter-SKILL"
 NAME="gmb-foundry-creature-converter"
 VERSION="${VERSION:-latest}"
 TARGET="${TARGET:-all}"

@@ -1,0 +1,30 @@
+# Собирает скилл и прикладывает файлы к релизу при пуше тега вида v1.0.0:
+#   git tag v1.0.0 && git push origin v1.0.0
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Test examples
+        working-directory: skills/gmb-foundry-creature-converter/examples
+        run: |
+          for f in *.spec.json; do python ../scripts/build_foundry.py "$f" -o "/tmp/$f.out.json"; done
+          python ../scripts/validate_foundry.py /tmp/*.out.json --quiet
+      - name: Package
+        run: |
+          mkdir dist
+          cd skills
+          zip -r ../dist/gmb-foundry-creature-converter.zip gmb-foundry-creature-converter -x "*/__pycache__/*"
+          cp ../dist/gmb-foundry-creature-converter.zip ../dist/gmb-foundry-creature-converter.skill
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
